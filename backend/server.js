@@ -2,10 +2,12 @@ import express from 'express';
 
 const app = express();
 
+//home route
 app.get('/pr', (req, res) => {
     res.send('Hello World!');
 });
 
+//products route
 app.get("/products", (req, res) => {
     res.send([
         {
