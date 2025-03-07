@@ -23,6 +23,7 @@ app.get("/products", (req, res) => {
             name: "Product 2",
             price: 200
         }
+        //object 3
         {
             id: 3,
             name: "Product 2",
