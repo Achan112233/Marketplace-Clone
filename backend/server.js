@@ -5,6 +5,7 @@ dotenv.config(); // Load environment variables from .env file
 //importing express module  
 const app = express();
 
+console.log(process.env.MONGO_URI);
 //home route
 app.get('/pr', (req, res) => {
     res.send('Hello World!');
