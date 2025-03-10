@@ -23,13 +23,13 @@ app.get("/products", (req, res) => {
             id: 2,
             name: "Product 2",
             price: 200
-        }
+        },
         //object 3
         {
             id: 3,
             name: "Product 2",
             price: 200
-        }
+        },
         {
             id: 4,
             name: "Product 2",
@@ -41,7 +41,3 @@ app.get("/products", (req, res) => {
 app.listen(5000, () => {
     console.log('Server started at http://localhost:5000');
 });
-
-app.callback = (req, res) => {  
-    res.send('Hello World!');  
-}                   
