@@ -1,6 +1,7 @@
 import mongoose from 'mongoose';
 
-
+//general use case for mongoose is to connect to database and then export the connection
+//exporting mongoose module
 export const connectDB = async () => {
     try{
         const conn = await mongoose.connect(process.env.MONGO_URI);
