@@ -19,7 +19,7 @@ const productSchema = mongoose.Schema({
     timestamps: true 
 });
 
-const Product = mongoose.model("Product", productSchema);
+const Product = mongoose.model('Product', productSchema);
 //tells mongoose to look at each product and determine if it is a product or not
 //product is the name of the model and productSchema is the schema that we created above
 export default Product;
