@@ -18,3 +18,9 @@ const productSchema = mongoose.Schema({
     //createdAt is the date when the product was created and updatedAt is the date when the product was last updated
     timestamps: true 
 });
+
+const Product = mongoose.model("Product", productSchema);
+//tells mongoose to look at each product and determine if it is a product or not
+//product is the name of the model and productSchema is the schema that we created above
+export default Product;
+//exporting the Product model
