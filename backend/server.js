@@ -10,6 +10,7 @@ const app = express();
 
 //products route
 app.get("/products", (req, res) => {
+    if 
 });
 
 //importing mongoose module
