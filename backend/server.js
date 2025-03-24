@@ -1,6 +1,9 @@
 import express from 'express';
 //importing express module  
 import dotenv from 'dotenv'; 
+//importing dotenv module
+import colors from 'colors';
+//importing colors module
 import { connectDB } from './config/db.js';
 
 // Load environment variables from secret file
@@ -13,6 +16,9 @@ app.get("/products", (req, res) => {
     res.send("Products route");
 });
 
+app.get("/home", (req, res) => {
+    res.send("API is running.. welcome to the home page");
+});
 //importing mongoose module
 console.log(process.env.MONGO_URI);
 
