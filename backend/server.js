@@ -10,16 +10,6 @@ import { connectDB } from './config/db.js';
 dotenv.config(); 
 const app = express();
 
-
-//products route
-app.get("/products", (req, res) => {
-    res.send("Products route");
-});
-
-//orders route
-app.get("/orders", (req, res) => {
-    res.send("Orders route");
-});
 app.get("/home", (req, res) => {
     res.send("API is running.. welcome to the home page");
 });
