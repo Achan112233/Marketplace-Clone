@@ -18,7 +18,8 @@ app.post("/products", async (req, res) => {
     }
 
     const newProduct = new Product(product)
-
+//creating a new product instance with the data provided by the user
+    // Product is a mongoose model that we will define later in the code
     try{
         await newProduct.save();
         res.status(201).json({ success: true, data: newProduct });
@@ -27,6 +28,7 @@ app.post("/products", async (req, res) => {
         res.status(500).json({ success: false, message: 'Server Error', error: error.message });
     }
 }); 
+
 //importing mongoose module
 console.log(process.env.MONGO_URI);
 
