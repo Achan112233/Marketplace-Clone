@@ -10,7 +10,7 @@ import { connectDB } from './config/db.js';
 dotenv.config(); 
 const app = express();
 
-app.post("/products", (req, res) => {
+app.post("/products", async (req, res) => {
     const product = req.body; //user will send this data in the request body
     
     if (!product.name || !product.price || !product.image) {
@@ -19,9 +19,14 @@ app.post("/products", (req, res) => {
 
     const newProduct = new Product(product)
 
-
-
-}
+    try{
+        await newProduct.save();
+        res.status(201).json({ success: true, data: newProduct });
+    } catch (error) {
+        console.error("Error in Create Product: ", error.message);
+        res.status(500).json({ success: false, message: 'Server Error', error: error.message });
+    }
+}); 
 //importing mongoose module
 console.log(process.env.MONGO_URI);
 
