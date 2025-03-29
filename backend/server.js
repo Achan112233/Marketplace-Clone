@@ -10,9 +10,18 @@ import { connectDB } from './config/db.js';
 dotenv.config(); 
 const app = express();
 
-app.get("/home", (req, res) => {
-    res.send("API is running.. welcome to the home page");
-});
+app.post("/products", (req, res) => {
+    const product = req.body; //user will send this data in the request body
+    
+    if (!product.name || !product.price || !product.image) {
+        return res.status(400).json({ success: false, message: 'Please provide all required fields: name, price, image' });
+    }
+
+    const newProduct = new Product(product)
+
+
+
+}
 //importing mongoose module
 console.log(process.env.MONGO_URI);
 
