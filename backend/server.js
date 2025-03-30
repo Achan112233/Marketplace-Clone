@@ -22,7 +22,7 @@ app.post("/api/products", async (req, res) => {
     }
 
     const newProduct = new Product(product)
-//creating a new product instance with the data provided by the user
+    //creating a new product instance with the data provided by the user
     // Product is a mongoose model that we will define later in the code
     try{
         await newProduct.save();
@@ -33,8 +33,10 @@ app.post("/api/products", async (req, res) => {
     }
 }); 
 
-//importing mongoose module
-console.log(process.env.MONGO_URI);
+app.delete("/api/products/:id", async (req, res) => {
+    const{ id } = req.params; //extracting the id from the request parameters
+    console.log("id:", id); //logging the id to the console for debugging purposes
+})
 
 app.listen(5000, () => {
     connectDB();
