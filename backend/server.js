@@ -36,6 +36,15 @@ app.post("/api/products", async (req, res) => {
 app.delete("/api/products/:id", async (req, res) => {
     const{ id } = req.params; //extracting the id from the request parameters
     console.log("id:", id); //logging the id to the console for debugging purposes
+
+    try{
+        await Product.findByIdAndDelete(id); //finding the product by id and deleting it from the database
+        res.status(200).json({ success: true, message: 'Product deleted successfully' });
+    }catch (error) {
+        console.error("Error in Delete Product: ", error.message);
+        //logging the error message to the console for debugging purposes
+        res.status(500).json({ success: false, message: 'Server Error', error: error.message });
+    }
 })
 
 app.listen(5000, () => {
