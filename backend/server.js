@@ -8,9 +8,13 @@ import { connectDB } from './config/db.js';
 
 // Load environment variables from secret file
 dotenv.config(); 
+
 const app = express();
 
-app.post("/products", async (req, res) => {
+//allows us ti accept JSON data in the request body
+app.use(express.json()); //middleware to parse JSON data from request body
+
+app.post("/api/products", async (req, res) => {
     const product = req.body; //user will send this data in the request body
     
     if (!product.name || !product.price || !product.image) {
