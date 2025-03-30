@@ -43,7 +43,7 @@ app.delete("/api/products/:id", async (req, res) => {
     }catch (error) {
         console.error("Error in Delete Product: ", error.message);
         //logging the error message to the console for debugging purposes
-        res.status(500).json({ success: false, message: 'Server Error', error: error.message });
+        res.status(404).json({ success: false, message: "Product not found" });
     }
 })
 
