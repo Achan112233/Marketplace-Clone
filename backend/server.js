@@ -1,7 +1,5 @@
-import express from 'express';
-//importing express module  
+import express from 'express'; 
 import dotenv from 'dotenv'; 
-//importing dotenv module
 import colors from 'colors';
 import { connectDB } from './config/db.js';
 
