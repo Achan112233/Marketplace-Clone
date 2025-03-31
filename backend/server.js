@@ -3,7 +3,6 @@ import express from 'express';
 import dotenv from 'dotenv'; 
 //importing dotenv module
 import colors from 'colors';
-//importing colors module
 import { connectDB } from './config/db.js';
 
 // Load environment variables from secret file
@@ -37,6 +36,7 @@ app.delete("/api/products/:id", async (req, res) => {
     const{ id } = req.params; //extracting the id from the request parameters
     console.log("id:", id); //logging the id to the console for debugging purposes
 
+    //checking if the id is valid or not
     try{
         await Product.findByIdAndDelete(id); //finding the product by id and deleting it from the database
         res.status(200).json({ success: true, message: 'Product deleted successfully' });
