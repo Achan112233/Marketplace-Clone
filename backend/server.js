@@ -47,6 +47,28 @@ app.post("/api/products", async (req, res) => {
     }
 });
 
+app.put("/api/products/:id", async (req, res) => {
+    const { id } = req.params; //extracting the id from the request parameters
+    const product = req.body; //user will send this data in the request body
+
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+        return res.status(404).json({ //checking if the id is valid or not
+            success: false,
+            message: 'Invalid Product ID'
+        });
+    }
+    try {
+        const updatedProduct = await Product.findByIdAndDelete(id, product, {new: true}); //finding the product by id and deleting it from the database to update it
+        res.status(200).json({
+            success: true,
+            data: updatedProduct //sending the updated product as a response
+        });
+    } catch (error) {
+        console.error("Error in Update Product: ", error.message); //logging the error message to the console for debugging purposes
+        return res.status(500).json({ success: false, message: 'Server Error', error: error.message });
+    }
+});
+
 app.delete("/api/products/:id", async (req, res) => {
     const { id } = req.params; //extracting the id from the request parameters
     console.log("id:", id); //logging the id to the console for debugging purposes
