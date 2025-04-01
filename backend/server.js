@@ -11,6 +11,23 @@ const app = express();
 //allows us ti accept JSON data in the request body
 app.use(express.json()); //middleware to parse JSON data from request body
 
+app.get("/api/products", async(req, res) => {
+    try{
+        const products = await Product.find({}); //finding all products in the database
+        res.status(200).json({
+            success: true, 
+            data: products //sending the products as a response
+        });
+    } catch (error){
+        console.log("Error in Get Products: ", error.message); //logging the error message to the console for debugging purposes
+        res.status(500).json({
+            success: false, 
+            message: 'Server Error', //sending a generic server error message
+            error: error.message //sending the actual error message for debugging purposes
+        });
+    }
+});
+
 app.post("/api/products", async (req, res) => {
     const product = req.body; //user will send this data in the request body
     
