@@ -11,9 +11,7 @@ const app = express();
 //allows us ti accept JSON data in the request body
 app.use(express.json()); //middleware to parse JSON data from request body
 
-app.use("/api/products", productRoutes] => {
-    res.status(200).json({ message: "This is the products API endpoint" });
-});
+app.use("/api/products", productRoutes);
 
 app.listen(5000, () => {
     connectDB();
