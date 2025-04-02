@@ -8,7 +8,7 @@ dotenv.config();
 
 const app = express();
 
-//allows us ti accept JSON data in the request body
+//allows us to accept JSON data in the request body
 app.use(express.json()); //middleware to parse JSON data from request body
 
 app.use("/api/products", productRoutes);
