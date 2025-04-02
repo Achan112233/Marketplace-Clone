@@ -1,4 +1,4 @@
-import Product from '../models/product.model.js'; //importing the Product model to interact with the database
+import Product from '../models/products.model.js'; //importing the Product model to interact with the database
 import mongoose from 'mongoose';
 
 export const getProducts = async (req, res) => {
