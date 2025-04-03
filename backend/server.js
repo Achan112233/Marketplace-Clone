@@ -1,5 +1,5 @@
 import express from 'express';
-import dotenv from env;';
+import dotenv from dotenv;
 import { connectDB } from './config/db.js';
 
 import productRoutes from './routes/product.route.js'; //importing the product routes
