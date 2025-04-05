@@ -18,5 +18,6 @@ app.use("/api/products", productRoutes);
 app.listen(PORT, () => {
     connectDB();
     //connecting to database
+    // Callback function to run after the server starts
     console.log('Server started at http://localhost:' + PORT);
 });
