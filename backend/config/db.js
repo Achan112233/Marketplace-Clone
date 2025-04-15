@@ -1,4 +1,5 @@
 import mongoose from 'mongoose';
+import colors from 'colors'; //for colored console messages
 
 //general use case for mongoose is to connect to database and then export the connection
 //exporting mongoose module

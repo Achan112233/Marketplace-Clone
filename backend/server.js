@@ -13,7 +13,7 @@ if (!process.env.MONGO_URI || !process.env.PORT) {
 }
 
 const app = express();
-const PORT = process.env.PORT || 5000
+const PORT = process.env.PORT || 5001; // Change the fallback port
 //allows us to accept JSON data in the request body
 app.use(express.json()); //middleware to parse JSON data from request body
 
