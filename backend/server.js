@@ -7,6 +7,11 @@ import productRoutes from './routes/product.route.js'; //importing the product r
 // Load environment variables from secret file
 dotenv.config(); // Load environment variables from .env file
 
+if (!process.env.MONGO_URI || !process.env.PORT) {
+    console.error("Error: Missing required environment variables in .env file");
+    process.exit(1); // Exit with failure
+}
+
 const app = express();
 const PORT = process.env.PORT || 5000
 //allows us to accept JSON data in the request body

@@ -48,7 +48,7 @@ export const putProduct = async (req, res) => {
         });
     }
     try {
-        const updatedProduct = await Product.findByIdAndDelete(id, product, {new: true}); //finding the product by id and deleting it from the database to update it
+        const updatedProduct = await Product.findByIdAndUpdate(id, product, { new: true }); // Corrected method
         res.status(200).json({
             success: true,
             data: updatedProduct //sending the updated product as a response
