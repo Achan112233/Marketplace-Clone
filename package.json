@@ -2,7 +2,8 @@
   "name": "joannes-marketplace",
   "version": "1.0.0",
   "scripts": {
-    "dev": "nodemon backend/server.js"
+    "dev": "nodemon backend/server.js",
+    "vite": "vite"
   },
   "type": "module",
   "keywords": [],
