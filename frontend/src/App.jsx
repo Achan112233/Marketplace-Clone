@@ -5,10 +5,6 @@ function App() {
 
   return (
     <>
-    <h1>Hello Vite + React!</h1>
-    <h1>Hello Vite + React + Chakra UI!</h1>
-
-    <h2>Count: {count}</h2>
     <Button>Hello</Button>
     
     </>
