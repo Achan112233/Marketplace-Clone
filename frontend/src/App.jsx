@@ -9,6 +9,12 @@ function App() {
     <Button onClick={() => setCount(count + 1)}>
       Count is {count}
     </Button>
+    <Button onClick={() => setCount(count - 1)}>
+      Count is {count}
+    </Button>
+    <Button onClick={() => setCount(count * 2)}>
+      Count is {count}
+    </Button>
     </>
   )
 }
